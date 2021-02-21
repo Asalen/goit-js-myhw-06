@@ -8,9 +8,14 @@ const books = [
 const MIN_BOOK_RATING = 8;
 // Пиши код ниже этой строки
 
+// const names = [...books]
+//     .map((book) => book.author)
+//     .filter(book => book.rating > MIN_BOOK_RATING)
+//     .sort((firstBook, secondBook) => firstBook.author.localeCompare(secondBook.author));
+
 const names = [...books]
-    .map((book) => book.author)
-    .filter(book => book.rating > MIN_BOOK_RATING)
-    .sort((firstBook, secondBook) => firstBook.author.localeCompare(secondBook.author));
+    .filter(book => book.rating >= MIN_BOOK_RATING)
+    .map(book => book.author)
+    .sort((a, b) => a.localeCompare(b));
 
 console.log(names);
